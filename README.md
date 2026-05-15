@@ -6,4 +6,5 @@ This is a collection of solutions from [Hello Interview](https://www.hellointerv
   <summary><h2>Two Pointers</summary>
 
   1. [Container with Most Water](https://leetcode.com/problems/container-with-most-water/)
+  2. [Two Sum II - Input Array is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
 </details>

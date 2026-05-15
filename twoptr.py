@@ -1,3 +1,26 @@
+# https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+def two_sum(numbers: list[int], target: int) -> list[int]:
+    """
+    >>> two_sum([2, 7, 11, 15], 9)
+    [1, 2]
+    >>> two_sum([2, 3, 4], 6)
+    [1, 3]
+    >>> two_sum([-1, 0], -1)
+    [1, 2]
+    """
+    left = 0
+    right = len(numbers) - 1
+    while left < right:
+        sum = numbers[left] + numbers[right]
+        if sum < target:
+            left += 1
+        elif sum > target:
+            right -= 1
+        else:  # sum == target
+            return [left + 1, right + 1]
+    raise Exception("no solution found")
+
+
 # https://leetcode.com/problems/container-with-most-water/
 def max_area(height: list[int]) -> int:
     """
