@@ -7,4 +7,5 @@ This is a collection of solutions from [Hello Interview](https://www.hellointerv
 
   1. [Container with Most Water](https://leetcode.com/problems/container-with-most-water/)
   2. [Two Sum II - Input Array is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
+  3. [3Sum](https://leetcode.com/problems/3sum/)
 </details>

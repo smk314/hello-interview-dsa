@@ -1,3 +1,38 @@
+# https://leetcode.com/problems/3sum/
+def three_sum(nums: list[int]) -> list[list[int]]:
+    """
+    >>> three_sum([-1, 0, 1, 2, -1, -4])
+    [[-1, -1, 2], [-1, 0, 1]]
+    >>> three_sum([0, 1, 1])
+    []
+    >>> three_sum([0, 0, 0])
+    [[0, 0, 0]]
+    """
+    nums.sort()
+    results: list[list[int]] = []
+    for i in range(len(nums) - 2):
+        if i > 0 and nums[i] == nums[i - 1]:
+            continue
+        target = -nums[i]
+        left = i + 1
+        right = len(nums) - 1
+        while left < right:
+            sum = nums[left] + nums[right]
+            if sum < target:
+                left += 1
+            elif sum > target:
+                right -= 1
+            else:  # sum == target
+                results.append([nums[i], nums[left], nums[right]])
+                left += 1
+                right -= 1
+                while left < right and nums[left] == nums[left - 1]:
+                    left += 1
+                while left < right and nums[right] == nums[right + 1]:
+                    right -= 1
+    return results
+
+
 # https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 def two_sum(numbers: list[int], target: int) -> list[int]:
     """
