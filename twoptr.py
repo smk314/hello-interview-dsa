@@ -1,3 +1,26 @@
+# https://leetcode.com/problems/valid-triangle-number/
+def triangle_number(nums: list[int]) -> int:
+    """
+    >>> triangle_number([2, 2, 3, 4])
+    3
+    >>> triangle_number([4, 2, 3, 4])
+    4
+    """
+    nums.sort()
+    result = 0
+    for i in range(len(nums) - 1, 1, -1):
+        left = 0
+        right = i - 1
+        while left < right:
+            sum = nums[left] + nums[right]
+            if sum <= nums[i]:
+                left += 1
+            else:
+                result += right - left
+                right -= 1
+    return result
+
+
 # https://leetcode.com/problems/3sum/
 def three_sum(nums: list[int]) -> list[list[int]]:
     """
